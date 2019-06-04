@@ -11,6 +11,13 @@ function next(){
 
 }
 
+function showDetailedInfo(country) {
+    $(".first_page").toggleClass("hidden")
+    $(".second_page").removeClass("hidden")
+    $('#greeting').text("So you are from " + country + ". How lovely!");
+    $('#medals').text(country + " has won X gold, Y silver and Z bronze medals through the years.");
+}
+
 // Prepare demo data
 // Data is joined to map using value of 'hc-key' property by default.
 // See API docs for 'joinBy' for more info on linking data and map.
@@ -88,6 +95,19 @@ $( document ).ready(function() {
 
         colorAxis: {
             min: 0
+        },
+
+        plotOptions: {
+            series: {
+                point: {
+                    events: {
+                        click() {
+                            let country = this.name
+                            showDetailedInfo(country)
+                        }
+                    }
+                }
+            }
         },
 
         series: [{
