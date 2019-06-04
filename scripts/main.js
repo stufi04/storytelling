@@ -11,11 +11,19 @@ function next(){
 
 }
 
-function showDetailedInfo(country) {
+function showDetailedInfo(country, value) {
     $(".first_page").toggleClass("hidden")
     $(".second_page").removeClass("hidden")
     $('#greeting').text("So you are from " + country + ". How lovely!");
     $('#medals').text(country + " has won X gold, Y silver and Z bronze medals through the years.");
+    if (value<500) {
+        $('#message').text(country + " is performing rather poorly compared to other European countries. Have you ever thought about why this might be so?");
+    } else if (value<1000) {
+        $('#message').text(country + " is performing worse than some European countries, but not that bad in general. Have you ever thought what factors might contribute to this?");
+    } else {
+        $('#message').text(country + " is one of the best performing European countries. Congrats! Have you ever thought about why this might be so?");
+    }
+
 }
 
 // Prepare demo data
@@ -103,7 +111,8 @@ $( document ).ready(function() {
                     events: {
                         click() {
                             let country = this.name
-                            showDetailedInfo(country)
+                            let value = this.value
+                            showDetailedInfo(country, value)
                         }
                     }
                 }
