@@ -15,7 +15,7 @@ function showDetailedInfo(country, value) {
     $(".first_page").toggleClass("hidden")
     $(".second_page").removeClass("hidden")
     $('#greeting').text("So you are from " + country + ". How lovely!");
-    $('#medals').text(country + " has won X gold, Y silver and Z bronze medals through the years.");
+    $('#medals').text("Here is " + country + "'s detailed performance:");
     if (value<500) {
         $('#message').text(country + " is performing rather poorly compared to other European countries. Have you ever thought about why this might be so?");
     } else if (value<1000) {

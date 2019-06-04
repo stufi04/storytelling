@@ -7,6 +7,12 @@
     width: 600px;
 }
 
+#wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
 .loading {
     margin-top: 10em;
     text-align: center;
