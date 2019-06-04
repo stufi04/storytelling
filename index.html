@@ -10,6 +10,14 @@
     <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/mapdata/custom/europe.js"></script>
 
+    <script src="https://vega.github.io/vega/vega.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@4"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
     <script src="scripts/main.js"></script>
 
     <meta charset="UTF-8">
@@ -17,26 +25,54 @@
 </head>
 <body>
 
-    <h2 class="first_page">Hi there!</h2>
-    <h2 class="first_page">Explore the map to see how different European countries compare by their total number of medals on the Olympic games! What do you notice? Which countries perform best?</h2>
+    <div class="container first_page">
 
-    <div id="container" class="first_page"></div>
+        <h3 class="first_page">Hi there!</h3>
+        <h4 class="first_page">Explore the map to see how different European countries compare by their total number of medals on the Olympic games! What do you notice? Which countries perform best?</h4>
 
-    <h2 class="first_page">When you are ready, click on your country to find out detailed information!</h2>
+        <div id="container" class="first_page"></div>
 
-    <h2 class="second_page hidden" id="greeting"></h2>
-    <h2 class="second_page hidden" id="medals"></h2>
-    <div id="wrapper" class="second_page hidden">
-        <img src="images/gold.jpg" class="second_page hidden" height="150px" width="100px">
-        <h1 class="second_page hidden" style="margin-right: 60px" >X</h1>
-        <img src="images/silver.jpg" class="second_page hidden" height="150px" width="100px">
-        <h1 class="second_page hidden" style="margin-right: 60px">Y</h1>
-        <img src="images/bronze.jpg" class="second_page hidden" height="150px" width="100px">
-        <h1 class="second_page hidden" style="margin-right: 60px">Z</h1>
+        <h4 class="first_page">When you are ready, click on your country to find out detailed information!</h4>
+
     </div>
-    <h2 class="second_page hidden" id="message"></h2>
+
+    <div class="container second_page hidden">
+
+        <h3 class="second_page hidden" id="greeting"></h3>
+        <br>
+        <h4 class="second_page hidden" id="medals"></h4>
+
+        <div id="wrapper" class="second_page hidden">
+            <img src="images/gold.jpg" class="second_page hidden" height="150px" width="100px">
+            <h1 class="second_page hidden" style="margin-right: 60px" >X</h1>
+            <img src="images/silver.jpg" class="second_page hidden" height="150px" width="100px">
+            <h1 class="second_page hidden" style="margin-right: 60px">Y</h1>
+            <img src="images/bronze.jpg" class="second_page hidden" height="150px" width="100px">
+            <h1 class="second_page hidden" style="margin-right: 60px">Z</h1>
+        </div>
+        <h4 class="second_page hidden" id="message"></h4>
+        <br>
+
+       <button type="button" onclick="showFirstGraph()" class="second_page hidden btn btn-primary">Hm i'm not sure</button>
+
+    </div>
 
 
-    <button id="next" onclick="next()" class="hidden">Next</button>
+    <div class="container third_page hidden">
+
+        <h3 class="third_page hidden">Could it be because of a country's wealth?</h3>
+
+        <h4 class="third_page hidden">Think about it - richer countries can invest more into supporting their sportists (facilities, equipment, salaries etc). Thus, they have more incentive to win. Let's check this theory on the graph below, which plots the number of medals in 2008 versus the respective country's GDP in the same year.</h4>
+
+        <div class="third_page hidden" id="graph1"></div>
+
+        <h4 class="third_page hidden">Do you notice the big group of poor countries underperforming on the lower left (Serbia, Romania etc)? And some rich countries with tons of medals on the upper right (UK, France, Spain)? Seems we are on the right track.</h4>
+
+        <h4 class="third_page hidden">But what about that big group of rich countries in the lower right that still perform less well? What could be the reason?</h4>
+
+        <button type="button" onclick="showSecondGraph()" class="third_page hidden btn btn-primary">Hm tell me</button>
+
+    </div>
+
 </body>
 </html>

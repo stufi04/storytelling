@@ -1,13 +1,16 @@
-var cnt = 0
+function showFirstGraph(){
 
-function next(){
+    $(".third_page").toggleClass("hidden")
+    $(".fourth_page").removeClass("hidden")
 
-    cnt ++
+}
 
-    if (cnt==1) {
-        $("#graph1").toggleClass("hidden")
-        $("#graph2").removeClass("hidden")
-    }
+function showFirstGraph(){
+
+    $(".second_page").toggleClass("hidden")
+    $(".third_page").removeClass("hidden")
+
+    $('#graph1').load('charts/gdp.html');
 
 }
 
