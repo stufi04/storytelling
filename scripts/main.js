@@ -1,4 +1,4 @@
-function showFirstGraph(){
+function showSecondGraph(){
 
     $(".third_page").toggleClass("hidden")
     $(".fourth_page").removeClass("hidden")
