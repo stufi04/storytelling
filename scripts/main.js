@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 function showFirstGraph(){
 
@@ -13,6 +14,21 @@ function goBackToSecondPage(){
     $(".second_page").removeClass("hidden")
 
     // $('#graph1').show('charts/gdp.html');
+}
+var country_global = null
+var value_global = null
+
+function showFinalPage(){
+
+    $(".fourth_page").toggleClass("hidden")
+    $(".final_page").removeClass("hidden")
+
+    if (value_global < 1000) {
+        $('#final_message').text("So if you ever get disheartened that " + country_global + " isn't winning as much or that it's sportists aren't good enough, relax - it's just the odds. Train hard and you can make it!");
+    } else {
+        $('#final_message').text("So just because " + country_global + " has been winning a lot, it doesn't necessarily mean the best sportists are born there. In order to succeed, you need to train just as hard as anybody!");
+    }
+
 }
 
 function showSecondGraph(){
@@ -52,7 +68,8 @@ function showDetailedInfo(country, value) {
     } else {
         $('#message').text(country + " is one of the best performing European countries. Congrats! Have you ever thought about why this might be so?");
     }
-
+    country_global = country
+    value_global = value
 }
 
 
