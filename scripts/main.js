@@ -14,7 +14,7 @@ var value_global = null
 
 function showFinalPage(){
 
-    $(".fourth_page").toggleClass("hidden")
+    $(".sixt_page").toggleClass("hidden")
     $(".final_page").removeClass("hidden")
 
     if (value_global < 1000) {
@@ -38,6 +38,13 @@ function showThirdGraph(){
     $(".fourth_page").toggleClass("hidden")
     $(".fifth_page").removeClass("hidden")
     $('#graph3').load('charts/gdpPop.html');
+}
+
+function showFourthGraph(){
+
+    $(".fifth_page").toggleClass("hidden")
+    $(".sixt_page").removeClass("hidden")
+    $('#graph4').load('charts/medalsPerYear.html');
 }
 
 
