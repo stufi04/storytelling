@@ -94,13 +94,29 @@
 
     <div class="container fifth_page hidden">
 
-        <h3 class="fifth_page hidden">How about if we combine the GDP and the populatin?</h3>
+        <h3 class="fifth_page hidden">How about if we combine the GDP and the population?</h3>
 
-        <h4 class="fifth_page hidden">Let's have a look, can you spot your country? Do you see the correlation?</h4>
+        <h4 class="fifth_page hidden">Given that we found correlation in the two features separately, it would make sense to expect even more correlation when combining them, let's see:</h4>
 
         <div class="fifth_page hidden" id="graph3"></div>
 
-        <button type="button" onclick="showFinalPage()" class="fifth_page hidden btn btn-primary" style="margin-bottom:30px">Ok cool, so?</button>
+        <h4 class="fifth_page hidden">As we can see on the graph, the higher the GDP and the more populated a country is, the more medals it obtained. There are however some exceptions. Is your country amongst them?</h4>
+
+        <button type="button" onclick="showFourthGraph()" class="fifth_page hidden btn btn-primary" style="margin-bottom:30px">Ok cool, so?</button>
+
+    </div>
+
+    <div class="container sixt_page hidden">
+
+        <h3 class="sixt_page hidden">But how did your country perform throughout the years?</h3>
+
+        <h4 class="sixt_page hidden">The performance of your country at one olympic game does not necessarily reflect how you perform overall, so let's look at the number of medals your country got throughout the years:</h4>
+
+        <div class="sixt_page hidden" id="graph4"></div>
+
+        <h4 class="sixt_page hidden">So, did you see a general increase, decrease or stagnation of the number of medals of your country?</h4>
+
+        <button type="button" onclick="showFinalPage()" class="sixt_page hidden btn btn-primary" style="margin-bottom:30px">Conclusion</button>
 
     </div>
 
