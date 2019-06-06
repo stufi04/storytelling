@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .vega-actions a {
+        margin-right: 12px;
+        color: #757575;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@4"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@2.6.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@3"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+      var spec = {"config": {"view": {"width": 400, "height": 300}}, "hconcat": [{"layer": [{"data": {"name": "data-dda5d2245e19f59813c5968c947db842"}, "mark": "point", "encoding": {"color": {"condition": {"type": "nominal", "field": "index", "legend": null, "selection": "selector021"}, "value": "lightgray"}, "x": {"type": "quantitative", "field": "gdp"}, "y": {"type": "quantitative", "field": "medals"}}}, {"data": {"name": "data-dda5d2245e19f59813c5968c947db842"}, "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 7}, "encoding": {"color": {"condition": {"type": "nominal", "field": "index", "legend": null, "selection": "selector021"}, "value": "lightgray"}, "text": {"type": "nominal", "field": "index"}, "x": {"type": "quantitative", "field": "gdp"}, "y": {"type": "quantitative", "field": "medals"}}, "height": 500, "width": 800}]}, {"data": {"name": "data-dda5d2245e19f59813c5968c947db842"}, "mark": "point", "encoding": {"color": {"condition": {"type": "nominal", "field": "index", "legend": null, "selection": "selector021"}, "value": "lightgray"}, "y": {"type": "nominal", "axis": {"orient": "right"}, "field": "index"}}, "selection": {"selector021": {"type": "multi", "fields": ["index"]}}}], "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json", "datasets": {"data-dda5d2245e19f59813c5968c947db842": [{"code": 86, "index": "Armenia", "year1": 2008, "gdp": 11647.3376249, "year2": 2008, "medals": 6}, {"code": 232, "index": "Austria", "year1": 2008, "gdp": 24565.4844964, "year2": 2008, "medals": 3}, {"code": 254, "index": "Azerbaijan", "year1": 2008, "gdp": 7870.78852657, "year2": 2008, "medals": 7}, {"code": 276, "index": "Belarus", "year1": 2008, "gdp": 12638.3343681, "year2": 2008, "medals": 30}, {"code": 448, "index": "Belgium", "year1": 2008, "gdp": 23701.2961423, "year2": 2008, "medals": 5}, {"code": 672, "index": "Czech Republic", "year1": 2008, "gdp": 13350.312252, "year2": 2008, "medals": 7}, {"code": 885, "index": "Estonia", "year1": 2008, "gdp": 21432.2007326, "year2": 2008, "medals": 3}, {"code": 1038, "index": "Finland", "year1": 2008, "gdp": 24694.057867400006, "year2": 2008, "medals": 5}, {"code": 1229, "index": "France", "year1": 2008, "gdp": 22057.350451, "year2": 2008, "medals": 76}, {"code": 1251, "index": "Georgia", "year1": 2008, "gdp": 5996.85802144, "year2": 2008, "medals": 6}, {"code": 1686, "index": "Hungary", "year1": 2008, "gdp": 8825.76483362, "year2": 2008, "medals": 27}, {"code": 1779, "index": "Ireland", "year1": 2008, "gdp": 24324.2859767, "year2": 2008, "medals": 3}, {"code": 1996, "index": "Italy", "year1": 2008, "gdp": 19460.4958473, "year2": 2008, "medals": 42}, {"code": 2040, "index": "Lithuania", "year1": 2008, "gdp": 12666.7349188, "year2": 2008, "medals": 5}, {"code": 2551, "index": "Norway", "year1": 2008, "gdp": 28464.3080143, "year2": 2008, "medals": 22}, {"code": 2627, "index": "Poland", "year1": 2008, "gdp": 10185.6033786, "year2": 2008, "medals": 20}, {"code": 2863, "index": "Romania", "year1": 2008, "gdp": 5040.32535523, "year2": 2008, "medals": 22}, {"code": 2885, "index": "Russia", "year1": 2008, "gdp": 9038.48552404, "year2": 2008, "medals": 143}, {"code": 2942, "index": "Serbia", "year1": 2008, "gdp": 7421.08201761, "year2": 2008, "medals": 15}, {"code": 2963, "index": "Slovakia", "year1": 2008, "gdp": 13037.0861218, "year2": 2008, "medals": 10}, {"code": 3190, "index": "Spain", "year1": 2008, "gdp": 17734.029152900002, "year2": 2008, "medals": 71}, {"code": 3409, "index": "Sweden", "year1": 2008, "gdp": 25181.2039061, "year2": 2008, "medals": 7}, {"code": 3662, "index": "Turkey", "year1": 2008, "gdp": 8126.93802029, "year2": 2008, "medals": 8}, {"code": 3684, "index": "Ukraine", "year1": 2008, "gdp": 5027.61780856, "year2": 2008, "medals": 31}, {"code": 3904, "index": "United Kingdom", "year1": 2008, "gdp": 24602.1336347, "year2": 2008, "medals": 77}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+
+  </script>
+</body>
+</html>
