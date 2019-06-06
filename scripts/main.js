@@ -14,7 +14,9 @@ var value_global = null
 
 function showFinalPage(){
 
+
     $(".sixt_page").toggleClass("hidden")
+
     $(".final_page").removeClass("hidden")
 
     if (value_global < 1000) {
