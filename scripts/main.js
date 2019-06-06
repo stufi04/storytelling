@@ -1,9 +1,3 @@
-function showSecondGraph(){
-
-    $(".third_page").toggleClass("hidden")
-    $(".fourth_page").removeClass("hidden")
-    $('#graph2').load('charts/pop.html');
-}
 
 function showFirstGraph(){
 
@@ -13,6 +7,34 @@ function showFirstGraph(){
     $('#graph1').load('charts/gdp.html');
 
 }
+
+function goBackToSecondPage(){
+    $(".third_page").toggleClass("hidden")
+    $(".second_page").removeClass("hidden")
+
+    // $('#graph1').show('charts/gdp.html');
+}
+
+function showSecondGraph(){
+
+    $(".third_page").toggleClass("hidden")
+    $(".fourth_page").removeClass("hidden")
+    $('#graph2').load('charts/pop.html');
+}
+function showThirdPage(){
+
+    $(".second_page").toggleClass("hidden")
+    $(".third_page").removeClass("hidden")
+}
+
+function showThirdGraph(){
+
+    $(".fourth_page").toggleClass("hidden")
+    $(".fifth_page").removeClass("hidden")
+    // $('#graph3').load('charts/pop.html');
+}
+
+
 
 function showDetailedInfo(country, value) {
     $(".first_page").toggleClass("hidden")
