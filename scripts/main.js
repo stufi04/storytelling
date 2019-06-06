@@ -2,7 +2,6 @@ function showSecondGraph(){
 
     $(".third_page").toggleClass("hidden")
     $(".fourth_page").removeClass("hidden")
-
     $('#graph2').load('charts/pop.html');
 }
 
