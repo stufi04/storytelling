@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 function showFirstGraph(){
 
@@ -9,12 +8,7 @@ function showFirstGraph(){
 
 }
 
-function goBackToSecondPage(){
-    $(".third_page").toggleClass("hidden")
-    $(".second_page").removeClass("hidden")
 
-    // $('#graph1').show('charts/gdp.html');
-}
 var country_global = null
 var value_global = null
 
@@ -37,17 +31,13 @@ function showSecondGraph(){
     $(".fourth_page").removeClass("hidden")
     $('#graph2').load('charts/pop.html');
 }
-function showThirdPage(){
 
-    $(".second_page").toggleClass("hidden")
-    $(".third_page").removeClass("hidden")
-}
 
 function showThirdGraph(){
 
     $(".fourth_page").toggleClass("hidden")
     $(".fifth_page").removeClass("hidden")
-    // $('#graph3').load('charts/pop.html');
+    $('#graph3').load('charts/gdpPop.html');
 }
 
 
